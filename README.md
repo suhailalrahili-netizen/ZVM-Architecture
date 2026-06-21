@@ -1,0 +1,6 @@
+# ZVM-Architecture
+ZVM-Core is an advanced, bare-metal register-based Virtual Machine (VM) and Central Processing Unit (CPU) architecture simulator, engineered completely from the ground up in pure ISO C. Designed as a comprehensive blueprint for low-level systems computing, it encapsulates a structural micro-architecture execution pipeline that mirrors modern computing mechanics. 
+
+The simulator implements a deterministic Fetch-Decode-Execute-Catch state machine loop, enforcing absolute hardware isolation between runtime phases. It boasts a custom 8-bit Instruction Set Architecture (ISA) spanning arithmetic operations, bitwise logic, and precise memory-mapping, alongside an explicit stack allocation pipeline with strict boundary tracking to prevent memory corruption. 
+
+Additionally, ZVM-Core features a robust, trap-based exception routing subsystem that isolates operational faults instantly. Its decoupled, synchronous Input/Output (I/O) device subsystem abstracts hardware interaction through structural virtual device drivers, simulating real-world peripheral behavior (such as console screens and keyboards) via modular function pointers. This zero-dependency core stands as a highly scannable, optimized, and standalone simulation of hardware-software co-design.
