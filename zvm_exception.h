@@ -35,7 +35,6 @@ typedef bool (*zxpt_exception_handler_t)(zvm_vm_t* vm, uint8_t code);
 #define ZVM_EXCEPT_CODE_STACK_UNDERFLOW      7
 #define ZVM_EXCEPT_CODE_IO_DEVICE_NOT_FOUND  8
 
-/* الإعلان المسبق عن الدوال المـولدة عبر الماكرو */
 bool zxpt_fetch(zvm_vm_t* vm, uint8_t code);
 bool zxpt_decode(zvm_vm_t* vm, uint8_t code);
 bool zxpt_execute(zvm_vm_t* vm, uint8_t code);
@@ -69,7 +68,7 @@ struct zvm_exception_entry_t{
 #define ZVM_EXCEPTION_HANDLER_ENTRY(type, code, name, message) \
     {ZVM_EXCEPT_TYPE_ ## type, ZVM_EXCEPT_CODE_ ## code,  ZVM_EXCEPTION_HANDLER_FUNCTION_NAME(name)   , message},
 
-/* تم نقل المصفوفة لملف الـ .c لمنع تكرار تعريفها في كل ملف يضمن الهيدر */
+
 extern const zvm_exception_entry_t exception_handlers [];
 #define ZVM_EXCEPTION_HANDLERS_COUNT 9
 #define zvm_exception_is_handler(code)  ((code) < ZVM_EXCEPTION_HANDLERS_COUNT)
